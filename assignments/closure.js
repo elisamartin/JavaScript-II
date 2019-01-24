@@ -1,11 +1,12 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
-let something = 'This seems to be something';
-function whatIsThis() {
-	return something;
+function askAboutSomething() {
+	let something = 'This seems to be something';
+	function whatIsThis() {
+		return something;
+	}
+	console.log(whatIsThis());
 }
-console.log(whatIsThis());
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {

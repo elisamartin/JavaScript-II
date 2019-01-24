@@ -468,10 +468,9 @@ console.log(fullName);
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER.
 // Convert each first name into all caps and log the result
-let allCaps = [];
-runners.map(function(person) {
+let allCaps = runners.map(function(person) {
 	let name = person.first_name.toUpperCase();
-	allCaps.push(name);
+	return name;
 });
 console.log(allCaps);
 
@@ -479,11 +478,11 @@ console.log(allCaps);
 // The large shirts won't be available for the event due to an ordering issue.
 // Get a list of runners with large sized shirts so they can choose a different size.
 // Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
-let largeShirts = [];
-let onlyLargeRunners = runners.filter(checkIfLarge);
+
+let largeShirts = runners.filter(checkIfLarge);
 function checkIfLarge(runner) {
 	if (runner.shirt_size === 'L') {
-		largeShirts.push(runner);
+		return runner;
 	}
 }
 console.log(largeShirts);
@@ -491,8 +490,8 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes.
 // Add up all the donations into a ticketPriceTotal array and log the result
-let ticketPriceTotal = [];
-ticketPriceTotal = runners.reduce(adder, 0);
+
+let ticketPriceTotal = runners.reduce(adder, 0);
 function adder(acc, runner) {
 	return acc + runner.donation;
 }
@@ -511,11 +510,10 @@ console.log(companyInfo);
 
 // Problem 2
 // Bussiness that donated 150 or more
-let bigDonations = [];
-let bigDonnors = runners.filter(checkDonation);
+let bigDonations = runners.filter(checkDonation);
 function checkDonation(runner) {
 	if (runner.donation >= 150) {
-		bigDonations.push(runner.company_name);
+		return runner;
 	}
 }
 console.log(bigDonations);
@@ -523,8 +521,7 @@ console.log(bigDonations);
 // Problem 3
 // Average donation
 
-let donationAverage = [];
-donationAverage = runners.reduce(divider, 0);
+let donationAverage = runners.reduce(divider, 0);
 function divider(acc, runner) {
 	return acc + runner.donation;
 }
